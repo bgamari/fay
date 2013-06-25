@@ -132,7 +132,7 @@ options = FayCompilerOptions
   <*> optional (strOption (long "base-path" <> help "If fay can't find the sources of fay-base you can use this to provide the path. Use --base-path ~/example instead of --base-path=~/example to make sure ~ is expanded properly"))
 
   where strsOption m =
-          nullOption (m <> reader (Right . wordsBy (== ',')) <> value [])
+          nullOption (m <> reader (pure . wordsBy (== ',')) <> value [])
 
 
 -- | Make incompatible options.
